@@ -1,28 +1,33 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import Example from './Ejemplo';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 
+import { Routes, Route } from 'react-router-dom';
+import Layout  from "./pages/Layout";
+import About  from "./pages/Musica";
+import Home  from "./pages/Home";
+import Mercancia from './pages/Mercancia';
+
+import Dashboard  from "./pages/Conciertos";
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+    
+    <div>
+      <h3>PROYECTO 122: GRUPO DE MUSICA</h3>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+           <Route path="/" element={<Home />} />
+           <Route path="about" element={<About />} />
+           <Route path="dashboard" element={<Dashboard />} />
+           <Route path="mercancia" element={<Mercancia />} />
+           
+           
+        </Route>
+      </Routes>
     </div>
+    
   );
 }
 
